@@ -1,17 +1,36 @@
 {
-  "name": "moment-token",
+  "name": "@kindtiger/moment_token",
   "version": "0.0.1",
-  "description": "moment-token",
-  "main": "index.js",
+  "description": "moment_token design tokens (CSS variables, SCSS variables, Tailwind v4 theme)",
+  "files": [
+    "dist",
+    "tokens",
+    "build-tokens.mjs"
+  ],
+  "exports": {
+    "./css": "./dist/css/variables.css",
+    "./scss": "./dist/scss/_variables.scss",
+    "./tailwind": "./dist/tailwind/theme.css",
+    "./tokens/*": "./tokens/*"
+  },
   "scripts": {
-    "build":"node build-tokens.mjs"
+    "build": "node build-tokens.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simseonbeom/moment-token.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "design-tokens",
+    "style-dictionary",
+    "css-variables",
+    "tailwindcss"
+  ],
+  "author": "kindtiger",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
@@ -22,4 +41,3 @@
     "style-dictionary": "5.5.3"
   }
 }
-
